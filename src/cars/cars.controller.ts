@@ -12,7 +12,7 @@ export class CarsController {
 
    @Get()
      getAllCars() {
-       return {car:this.carsService.findAll()};
+       return this.carsService.findAll();
      }
 
     @Get('random')

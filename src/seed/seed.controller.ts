@@ -7,7 +7,7 @@ export class SeedController {
 
   
   @Get()
-  findAll() {
-    return this.seedService.findAll();
+  excuteSeed() {
+    return this.seedService.populateDB();
   }
 }

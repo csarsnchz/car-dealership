@@ -6,36 +6,36 @@ import { Brand } from './entities/brand.entity';
 @Injectable()
 export class BrandsService {
   private brands: Brand[] = [
-    {
-      id: uuid(),
-      name: 'Toyota',
-      created_at: Date.now(),
-    },
-    {
-      id: uuid(),
-      name: 'Nissan',
-      created_at: Date.now(),
-    },
-    {
-      id: uuid(),
-      name: 'Honda',
-      created_at: Date.now(),
-    },
-    {
-      id: uuid(),
-      name: 'Ford',
-      created_at: Date.now(),
-    },
-    {
-      id: uuid(),
-      name: 'Chevrolet',
-      created_at: Date.now(),
-    },
-    {
-      id: uuid(),
-      name: 'Volkswagen',
-      created_at: Date.now(),
-    }
+    // {
+    //   id: uuid(),
+    //   name: 'Toyota',
+    //   created_at: Date.now(),
+    // },
+    // {
+    //   id: uuid(),
+    //   name: 'Nissan',
+    //   created_at: Date.now(),
+    // },
+    // {
+    //   id: uuid(),
+    //   name: 'Honda',
+    //   created_at: Date.now(),
+    // },
+    // {
+    //   id: uuid(),
+    //   name: 'Ford',
+    //   created_at: Date.now(),
+    // },
+    // {
+    //   id: uuid(),
+    //   name: 'Chevrolet',
+    //   created_at: Date.now(),
+    // },
+    // {
+    //   id: uuid(),
+    //   name: 'Volkswagen',
+    //   created_at: Date.now(),
+    // }
   ];
 
   create(createBrandDto: CreateBrandDto) {
@@ -76,5 +76,9 @@ export class BrandsService {
     const brand = this.findOne(id);
     if (!brand) throw new NotFoundException(`Brand with id ${id} not found`);
     this.brands = this.brands.filter(brand => brand.id !== id);
+  }
+
+  executePopulateFromSeed( brands: Brand[] ) {
+    this.brands = brands;
   }
 }

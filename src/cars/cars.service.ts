@@ -7,36 +7,36 @@ import {CreateCarDto, UpdateCarDto} from './dto';
 export class CarsService {
 
     private cars: Car[] = [
-        {
-            id: uuid(),
-            brand: 'Toyota',
-            model: 'Corolla', 
-        },
-        {
-            id: uuid(),
-            brand: 'Nissan',
-            model: 'Altima',
-        },
-        {
-            id: uuid(),
-            brand: 'Honda', 
-            model: 'Civic',
-        },
-        {
-            id: uuid(),
-            brand: 'Ford', 
-            model: 'Focus',
-        },
-        {
-            id: uuid(),
-            brand: 'Chevrolet', 
-            model: 'Cruze',
-        },
-        {
-            id: uuid(),
-            brand: 'Volkswagen', 
-            model: 'Jetta',
-        }  
+        // {
+        //     id: uuid(),
+        //     brand: 'Toyota',
+        //     model: 'Corolla', 
+        // },
+        // {
+        //     id: uuid(),
+        //     brand: 'Nissan',
+        //     model: 'Altima',
+        // },
+        // {
+        //     id: uuid(),
+        //     brand: 'Honda', 
+        //     model: 'Civic',
+        // },
+        // {
+        //     id: uuid(),
+        //     brand: 'Ford', 
+        //     model: 'Focus',
+        // },
+        // {
+        //     id: uuid(),
+        //     brand: 'Chevrolet', 
+        //     model: 'Cruze',
+        // },
+        // {
+        //     id: uuid(),
+        //     brand: 'Volkswagen', 
+        //     model: 'Jetta',
+        // }  
     ];
 
     findAll() {
@@ -75,4 +75,8 @@ export class CarsService {
         this.cars = this.cars.filter(car => car.id !== id);
         return {message: `Car with id ${id} deleted`};
     }
+
+    executePopulateFromSeed( cars: Car[] ) {
+        this.cars = cars;
+      }
 }
